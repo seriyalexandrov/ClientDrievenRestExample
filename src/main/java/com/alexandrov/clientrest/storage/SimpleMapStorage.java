@@ -6,6 +6,7 @@ import com.alexandrov.clientrest.model.Port;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -21,10 +22,10 @@ public class SimpleMapStorage {
         pushNode(new Node("1", "n1"));
         pushNode(new Node("2", "n2"));
 
-        pushPort(new Port("1/1", "1", "p1/1"));
-        pushPort(new Port("2/1", "2", "p2/11"));
+        pushPort(new Port("1_1", "1", "p1_1"));
+        pushPort(new Port("2_1", "2", "p2_11"));
 
-        pushLink(new Link("1/1-2/1", "1", "2", "1/1", "2/1", "l1"));
+        pushLink(new Link("1_1-2_1", "1", "2", "1_1", "2_1", "l1"));
     }
 
     public void pushNode(Node node) {
@@ -49,5 +50,17 @@ public class SimpleMapStorage {
 
     public Link getLinkById(String linkId) {
         return links.get(linkId);
+    }
+
+    public Collection<Node> getNodes() {
+        return nodes.values();
+    }
+
+    public Collection<Port> getPorts() {
+        return ports.values();
+    }
+
+    public Collection<Link> getLinks() {
+        return links.values();
     }
 }
