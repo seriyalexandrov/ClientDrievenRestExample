@@ -15,14 +15,14 @@ public class HttpRestController {
         this.clientRestRepo = clientRestRepo;
     }
 
-    @GetMapping(value = "{entity}/{id}")
-    public Object getEntityById(@PathVariable() String entity, @PathVariable String id) {
-        return clientRestRepo.getEntityById(entity, id);
-    }
 
     @GetMapping(value = "{entity}")
-    public Object getEntityById(@PathVariable() String entity) {
-        return clientRestRepo.getEntities(entity);
+    public Object getEntityById(@PathVariable() String entity, @RequestParam(required = false) String include) {
+        return clientRestRepo.getEntities(entity, include);
     }
 
+    @GetMapping(value = "{entity}/{id}")
+    public Object getEntityById(@PathVariable() String entity, @PathVariable String id, @RequestParam(required = false) String include) {
+        return clientRestRepo.getEntityById(entity, id, include);
+    }
 }

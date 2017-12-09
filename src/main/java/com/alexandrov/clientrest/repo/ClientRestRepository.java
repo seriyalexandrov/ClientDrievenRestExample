@@ -4,7 +4,7 @@ import java.util.Collection;
 
 public interface ClientRestRepository {
 
-    Collection getEntities(String className);
+    Collection getEntities(String className, String include);
 
-    Object getEntityById(String entity, String id);
+    Object getEntityById(String entity, String id, String include);
 }
