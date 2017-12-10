@@ -1,0 +1,8 @@
+<client-rest>
+    <entities>
+        <entity>
+            <className>com.alexandrov.example.model.Node</className>
+            <repository>com.alexandrov.example.storage.NodeRepository</repository>
+        </entity>
+    </entities>
+</client-rest>

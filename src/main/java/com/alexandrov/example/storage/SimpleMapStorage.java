@@ -1,24 +1,20 @@
-package com.alexandrov.clientrest.storage;
+package com.alexandrov.example.storage;
 
-import com.alexandrov.clientrest.model.Link;
-import com.alexandrov.clientrest.model.Node;
-import com.alexandrov.clientrest.model.Port;
-import org.springframework.stereotype.Component;
+import com.alexandrov.example.model.Link;
+import com.alexandrov.example.model.Node;
+import com.alexandrov.example.model.Port;
 
-import javax.annotation.PostConstruct;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-@Component
 public class SimpleMapStorage {
 
     private final ConcurrentMap<String, Node> nodes = new ConcurrentHashMap<>();
     private final ConcurrentMap<String, Port> ports = new ConcurrentHashMap<>();
     private final ConcurrentMap<String, Link> links = new ConcurrentHashMap<>();
 
-    @PostConstruct
-    public void init() {
+    public SimpleMapStorage() {
         pushNode(new Node("1", "n1"));
         pushNode(new Node("2", "n2"));
 

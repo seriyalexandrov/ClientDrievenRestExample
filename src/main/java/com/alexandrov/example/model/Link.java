@@ -1,10 +1,8 @@
-package com.alexandrov.clientrest.model;
+package com.alexandrov.example.model;
 
-import com.alexandrov.clientrest.annotations.ClientRestEntity;
 import lombok.ToString;
 
 @ToString
-@ClientRestEntity
 public class Link {
 
     public Link(String id, String srcNodeId, String dstNodeId, String srcPortId, String dstPortId, String name) {

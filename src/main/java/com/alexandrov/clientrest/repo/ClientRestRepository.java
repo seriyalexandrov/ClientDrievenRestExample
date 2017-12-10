@@ -1,12 +1,10 @@
 package com.alexandrov.clientrest.repo;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 import java.util.Collection;
 
-public interface ClientRestRepository {
+public interface ClientRestRepository<Entity> {
 
-    Collection getEntities(String className, String include);
+    Collection<Entity> getEntities();
 
-    Object getEntityById(String entity, String id, String include);
+    Entity getEntityById(String id);
 }
