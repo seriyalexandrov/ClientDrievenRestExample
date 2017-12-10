@@ -1,4 +1,4 @@
-package com.alexandrov.clientrest;
+package com.alexandrov.example;
 
 import com.alexandrov.clientrest.engine.ClientRest;
 import org.springframework.web.bind.annotation.*;
