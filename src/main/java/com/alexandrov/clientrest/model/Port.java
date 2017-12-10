@@ -1,8 +1,10 @@
 package com.alexandrov.clientrest.model;
 
+import com.alexandrov.clientrest.annotations.ClientRestEntity;
 import lombok.ToString;
 
 @ToString
+@ClientRestEntity
 public class Port {
 
     public Port(String id, String nodeId, String name) {

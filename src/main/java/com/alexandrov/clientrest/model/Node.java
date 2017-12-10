@@ -1,8 +1,10 @@
 package com.alexandrov.clientrest.model;
 
+import com.alexandrov.clientrest.annotations.ClientRestEntity;
 import lombok.ToString;
 
 @ToString
+@ClientRestEntity
 public class Node {
 
     public Node(String id, String name) {

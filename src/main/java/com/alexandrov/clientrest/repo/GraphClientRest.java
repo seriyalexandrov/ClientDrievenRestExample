@@ -1,5 +1,6 @@
 package com.alexandrov.clientrest.repo;
 
+import com.alexandrov.clientrest.engine.ClientRestConfiguration;
 import com.alexandrov.clientrest.model.Node;
 import com.alexandrov.clientrest.model.Port;
 import com.alexandrov.clientrest.storage.SimpleMapStorage;
@@ -17,13 +18,17 @@ public class GraphClientRest implements ClientRestRepository {
 
     private SimpleMapStorage storage;
 
+    private ClientRestConfiguration configuration;
+
     @Autowired
-    public GraphClientRest(SimpleMapStorage storage) {
+    public GraphClientRest(SimpleMapStorage storage, ClientRestConfiguration configuration) {
         this.storage = storage;
+        this.configuration = configuration;
     }
 
     @Override
     public Collection getEntities(String entity, String include) {
+
         switch (entity) {
             case "node":
                 return storage.getNodes();
