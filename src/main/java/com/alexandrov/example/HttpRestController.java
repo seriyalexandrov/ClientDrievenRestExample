@@ -9,9 +9,8 @@ public class HttpRestController {
 
     private ClientRest clientRest = new ClientRest();
 
-
     @GetMapping(value = "{entity}")
-    public Object getEntityById(@PathVariable() String entity, @RequestParam(required = false) String include) {
+    public Object getEntity(@PathVariable() String entity, @RequestParam(required = false) String include) {
         return clientRest.getEntities(entity, include);
     }
 
