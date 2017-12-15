@@ -31,8 +31,6 @@ public class Config {
 
         @Override
         public int hashCode() {
-            System.out.println("hash: " + Objects.hash(base, ref));
-            System.out.println("hash: " + Objects.hash(ref, base));
             return Objects.hash(base, ref);
         }
     }
